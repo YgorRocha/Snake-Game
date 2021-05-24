@@ -12,7 +12,7 @@
 <body>
     <canvas id="mycanvas" width="400" height="400"></canvas>
     <script type="text/javascript">
-        //Gama will start when my window get load
+ 
         window.onload = function () {
 
             var canvas = document.getElementById('mycanvas');
@@ -35,7 +35,7 @@
                 px += vx;
                 py += vy;
                 if (px < 0) {
-                    px = qp - 1;
+                    px = qp -1;
                 }
                 if (px > qp - 1) {
                     px = 0;
@@ -52,11 +52,11 @@
                 ctx.fillStyle = "black";
                 ctx.fillRect(0, 0, canvas.width, canvas.height);
                 
-                ctx.fillStyle ='red';
+                ctx.fillStyle ='blue';
                 ctx.fillRect(apx*lp, apy*lp, lp,lp);
 
                 ctx.fillStyle = 'grey';
-                for(var i = 0; i<trail.length; i++ ){
+                for(var i = 0; i<trail.length; i++){
                     ctx.fillRect(trail[i].x*lp, trail[i].y*lp, lp,lp);
                 
                 if(trail[i].x == px && trail[i].y == py)
@@ -67,6 +67,7 @@
                     tail =5
                     
                 }
+                
                 }
                 trail.push({x:px, y:py})
                 while(trail.length > tail){
